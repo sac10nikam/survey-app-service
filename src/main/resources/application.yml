@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: survey-app-service
+  datasource:
+    url: jdbc:h2:mem:survey;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    initialization-mode: always
+    schema: classpath:schema-H2.sql
+  h2:
+    console:
+    enabled: true
+    path: /h2-console
+
+  jpa:
+    show-sql: false
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+springdoc:
+  swagger-ui:
+    path: /doc/survey-app-service/swagger-ui.html
+  api-docs:
+    path: /doc/survey-app-service/api-docs
